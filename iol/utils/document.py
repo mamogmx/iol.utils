@@ -1,5 +1,5 @@
 from zope.interface import implements
-from copy import deepcopy
+from plone import api
 
 from Products.CMFPlomino.interfaces import IPlominoDocument
 
@@ -10,7 +10,7 @@ class IOLDocument(object):
         self.context = context
         self.request = request
 
-    def getIolRoles(self):
+    def getIolRoles2(self):
         result = dict(
             iol_owner = [],
             iol_reviewer = [],
@@ -24,3 +24,6 @@ class IOLDocument(object):
             if 'iol-manager' in roles:
                 result['iol_manager'].append(usr)
         return result
+
+    def getIolState2(self):
+        return api.content.get_state(obj=self)
