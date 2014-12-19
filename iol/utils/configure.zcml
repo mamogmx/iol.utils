@@ -25,7 +25,7 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   <!-- -*- extra stuff goes here -*- -->
-    <class class="Products.CMFPlomino.interfaces.IPlominoDocument">
+    <class class="Products.CMFPlomino.PlominoDocument.PlominoDocument">
         <implements interface=".interfaces.IIolDocument" />
     </class>
 </configure>
