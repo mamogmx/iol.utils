@@ -1,4 +1,4 @@
 from zope.interface import Interface
 
-class IIOLDocument(Interface):
+class IIolDocument(Interface):
     pass
