@@ -30,7 +30,7 @@
     </class>-->
     <adapter
         for="Products.CMFPlomino.interfaces.IPlominoDocument"
-        provides="interfaces.IIolDocument"
+        provides=".interfaces.IIolDocument"
         factory=".utils.iol_document"
       />
 </configure>
