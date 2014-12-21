@@ -34,6 +34,4 @@
         factory=".interfaces.IolDocument"
       />-->
 
-  <utility component=".interfaces.IolDocument"
-        provides="Products.CMFPlomino.interfaces.IPlominoDocument"/>
 </configure>

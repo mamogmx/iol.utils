@@ -1,6 +1,8 @@
 from zope.i18nmessageid import MessageFactory
-from AccessControl import allow_module
-
+from zope.component import getGlobalSiteManager
+from .interfaces import IIolDocument,IolDocument
+from Product.CMFPlomino.interfaces import IPlominoDocument
 # Set up the i18n message factory for our package
 MessageFactory = MessageFactory('iol.utils')
-allow_module('.interfaces.IolDocument')
+gsm = getGlobalSiteManager()
+gsm.registerAdapter(IolDocument,(IPlominoDocument,),IIolDocument)
