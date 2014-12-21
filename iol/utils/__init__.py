@@ -1,7 +1,7 @@
 from zope.i18nmessageid import MessageFactory
 from zope.component import getGlobalSiteManager
 from .interfaces import IIolDocument,IolDocument
-from Product.CMFPlomino.interfaces import IPlominoDocument
+from Product.CMFPlomino.interface import IPlominoDocument
 # Set up the i18n message factory for our package
 MessageFactory = MessageFactory('iol.utils')
 gsm = getGlobalSiteManager()
