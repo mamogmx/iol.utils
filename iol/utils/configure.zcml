@@ -25,12 +25,12 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   <!-- -*- extra stuff goes here -*- -->
-    <class class="Products.CMFPlomino.PlominoDocument.PlominoDocument">
+    <!--<class class="Products.CMFPlomino.PlominoDocument.PlominoDocument">
         <implements interface=".interfaces.IIolDocument" />
-    </class>
-    <!--<adapter
-        for=".interfaces.IIolDocument"
-        provides="Products.CMFPlomino.interfaces.IPlominoDocument"
-        factory="Products.CMFPlomino.PlominoDocument.PlominoDocument"
-      />-->
+    </class>-->
+    <adapter
+        for="Products.CMFPlomino.PlominoDocument.PlominoDocument"
+        provides=".interfaces.IIolDocument"
+        factory=".interfaces.IolDocument"
+      />
 </configure>
