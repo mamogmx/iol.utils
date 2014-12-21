@@ -28,9 +28,9 @@
    <!-- <class class="Products.CMFPlomino.PlominoDocument.PlominoDocument">
         <implements interface=".interfaces.IIolDocument" />
     </class>-->
-    <adapter
+    <!--<adapter
         for=".interfaces.IolDocument"
         provides=".interfaces.IIolDocument"
         factory="Products.CMFPlomino.PlominoDocument.PlominoDocument"
-      />
+      />-->
 </configure>
