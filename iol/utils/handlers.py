@@ -7,6 +7,8 @@ class IolDoc(PlominoDocument):
 
 
 def initIolDocument(doc,event):
+    import pdb
+    pdb.set_trace()
     doc = IolDoc(doc)
     return doc
 
