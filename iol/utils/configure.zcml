@@ -34,5 +34,5 @@
         factory=".interfaces.IolDocument"
       />-->
 
-  <utility component=".interfaces.IolDocument"\>
+  <utility component=".interfaces.IolDocument"/>
 </configure>
