@@ -34,8 +34,5 @@
         factory=".interfaces.IolDocument"
       />-->
 
-  <subscriber
-    for="Products.CMFPlomino.PlominoDocument.PlominoDocument Products.CMFPlomino.PlominoEvents.IPlominoCreateEvent"
-    handler=".handlers.initIolDocument"
-    />
+  <utility component=".interfaces.IolDocument"\>
 </configure>
