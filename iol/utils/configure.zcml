@@ -27,10 +27,15 @@
   <!-- -*- extra stuff goes here -*- -->
     <!--<class class="Products.CMFPlomino.PlominoDocument.PlominoDocument">
         <implements interface=".interfaces.IIolDocument" />
-    </class>-->
+    </class>
     <adapter
         for="Products.CMFPlomino.PlominoDocument.PlominoDocument"
         provides="Products.CMFPlomino.interfaces.IPlominoDocument"
         factory=".interfaces.IolDocument"
-      />
+      />-->
+
+  <subscriber
+    for="Products.CMFPlomino.PlominoDocument.PlominoDocument Products.CMFPlomino.PlominoEvents.IPlominoSaveEvent"
+    handler=".handlers.initIolDocument"
+    />
 </configure>
