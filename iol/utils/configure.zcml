@@ -35,7 +35,7 @@
       />-->
 
   <subscriber
-    for="Products.CMFPlomino.PlominoDocument.PlominoDocument zope.lifecycleevent.interfaces.IObjectCreatedEvent"
+    for="Products.CMFPlomino.PlominoDocument.PlominoDocument Products.Archetypes.interfaces.IObjectInitializedEvent"
     handler=".handlers.initIolDocument"
     />
 </configure>
