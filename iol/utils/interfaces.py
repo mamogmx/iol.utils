@@ -1,6 +1,6 @@
 from zope.interface import Interface,implements
 
-class IIolDocument(Interfaces):
+class IIolDocument(Interface):
     """
     Marker Interfaces
     """
