@@ -1,6 +1,12 @@
-from zope.interface import Interface
+from zope.interface import Interface,implements
 
-class IIolDocument(Interface):
+class IIolDocument(Interfaces):
+    """
+    Marker Interfaces
+    """
+
+class IolDocument(object):
+    implements(IIolDocument)
     def __init__(self, context, request):
         self.context = context
         self.request = request
