@@ -6,5 +6,3 @@ def initIolDocument(doc,event):
 
     adapter = IIolDocument(doc,IPlominoDocument)
     doc.iol = adapter
-    import pdb
-    pdb.set_trace()
