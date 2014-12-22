@@ -14,9 +14,12 @@ class IolDocument(object):
     implements(IIolDocument)
     adapts(IPlominoDocument)
 
+    def __init__(self, doc):
+        self.document = doc
+
     security.declarePublic('getIolStatus')
     def getIolStatus(self):
-        return api.content.get_state(obj=self)
+        return api.content.get_state(obj=self.doc)
 
 
 
