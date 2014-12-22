@@ -5,5 +5,5 @@ from Products.CMFPlomino.interfaces import IPlominoDocument
 
 # Set up the i18n message factory for our package
 MessageFactory = MessageFactory('iol.utils')
-gsm = getGlobalSiteManager()
-gsm.registerAdapter(IolDocument,(IPlominoDocument,),IIolDocument,'iol')
+#gsm = getGlobalSiteManager()/
+#gsm.registerAdapter(IolDocument,(IPlominoDocument,),IIolDocument,'iol')
