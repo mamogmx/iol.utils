@@ -21,8 +21,6 @@ class IolDocument(object):
     def getIolStatus(self):
         return api.content.get_state(obj=self)
 
-
-
 class IIolLayer(Interface):
     """Marker interface for the Browserlayer
     """
