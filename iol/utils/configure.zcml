@@ -30,4 +30,9 @@
         provides=".interfaces.IIolDocument"
         factory=".interfaces.IolDocument"
       />
+    <subscriber
+        for="Products.CMFPlomino.PlominoDocument.PlominoDocument Products.CMFPlomino.PlominoEvents.IPlominoCreateEvent"
+        handler=".handlers.initIolDocument"
+    />
+
 </configure>
