@@ -5,5 +5,3 @@ from Products.CMFPlomino.PlominoDocument import PlominoDocument
 from Products.CMFPlomino.interfaces import IPlominoDocument
 # Set up the i18n message factory for our package
 MessageFactory = MessageFactory('iol.utils')
-
-
