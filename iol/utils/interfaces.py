@@ -19,7 +19,7 @@ class IolDocument(object):
 
     security.declarePublic('getIolStatus')
     def getIolStatus(self):
-        return api.content.get_state(obj=self.doc)
+        return api.content.get_state(obj=self.document)
 
 
 
