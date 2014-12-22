@@ -15,11 +15,13 @@ class IolDocument(object):
     adapts(IPlominoDocument)
 
     def __init__(self, doc):
-        self = doc
+        self.document = doc
 
     security.declarePublic('getIolStatus')
     def getIolStatus(self):
-        return api.content.get_state(obj=self)
+        return api.content.get_state(obj=self.document)
+
+
 
 class IIolLayer(Interface):
     """Marker interface for the Browserlayer
