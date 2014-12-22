@@ -7,5 +7,3 @@ from Products.CMFPlomino.interfaces import IPlominoDocument
 MessageFactory = MessageFactory('iol.utils')
 
 
-adapter = IIolDocument(doc,IPlominoDocument)
-PlominoDocument.iol = adapter
