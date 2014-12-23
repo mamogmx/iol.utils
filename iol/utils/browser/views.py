@@ -33,3 +33,12 @@ class getIolState(object):
     def __call__(self):
         doc = self.aq_parent
         return api.content.get_state(obj=doc)
+
+class iol(object):
+
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+
+    def getVariables(self,varName):
+        return "pippo"

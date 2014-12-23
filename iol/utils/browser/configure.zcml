@@ -16,4 +16,11 @@
        class=".views.getIolState"
        permission="zope2.View"
        />
+    <browser:page
+       name="iol"
+       for="Products.CMFPlomino.interfaces.IPlominoDocument"
+       layer="..interfaces.IIolLayer"
+       class=".views.iol"
+       permission="zope2.View"
+       />
 </configure>
