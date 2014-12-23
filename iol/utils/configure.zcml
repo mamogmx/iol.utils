@@ -25,7 +25,7 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   <!-- -*- extra stuff goes here -*- -->
-    <adapter
+    <!--<adapter
         for="Products.CMFPlomino.interfaces.IPlominoDocument"
         provides=".interfaces.IIolDocument"
         factory=".interfaces.IolDocument"
@@ -33,6 +33,6 @@
     <subscriber
         for="Products.CMFPlomino.PlominoDocument.PlominoDocument Products.CMFPlomino.PlominoEvents.IPlominoCreateEvent"
         handler=".handlers.initIolDocument"
-    />
+    />-->
 
 </configure>

@@ -1,10 +1,14 @@
 from Products.CMFCore.utils import getToolByName
-from Products.Five.browser import BrowserView
 from plone.dexterity.browser.view import DefaultView
 from plone import api
 
-class getIolRoles(BrowserView):
-    def __call__(self, *args, **kwargs):
+class getIolRoles(object):
+
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+
+    def __call__(self):
         doc = self.aq_parent
         result = dict(
             iol_owner=[],
@@ -20,7 +24,12 @@ class getIolRoles(BrowserView):
                 result['iol_manager'].append(usr)
         return result
 
-class getIolState(BrowserView):
-    def __call__(self, *args, **kwargs):
+class getIolState(object):
+
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+
+    def __call__(self):
         doc = self.aq_parent
         return api.content.get_state(obj=doc)

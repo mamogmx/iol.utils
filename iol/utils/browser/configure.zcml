@@ -4,14 +4,14 @@
     i18n_domain="iol.desktop">
     <browser:page
        name="getIolRoles"
-       for="iol.utils.interfaces.IIolDocument"
+       for="Products.CMFPlomino.interfaces.IPlominoDocument"
        layer="..interfaces.IIolLayer"
        class=".views.getIolRoles"
        permission="zope2.View"
        />
     <browser:page
        name="getIolState"
-       for="iol.utils.interfaces.IIolDocument"
+       for="Products.CMFPlomino.interfaces.IPlominoDocument"
        layer="..interfaces.IIolLayer"
        class=".views.getIolState"
        permission="zope2.View"
