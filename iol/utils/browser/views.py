@@ -1,7 +1,12 @@
 from Products.CMFCore.utils import getToolByName
 from plone.dexterity.browser.view import DefaultView
 from plone import api
+from iol.utils.interfaces import IIolDocument
+from iol.utils import config
+from zope.component import getUtility
 
+
+# Get Iol Role on Object
 class getIolRoles(object):
 
     def __init__(self, context, request):
@@ -10,21 +15,24 @@ class getIolRoles(object):
 
     def __call__(self):
         doc = self.aq_parent
-        result = dict(
-            iol_owner=[],
-            iol_reviewer = [],
-            iol_manager = [],
-        )
-        for usr,roles in doc.get_local_roles():
-            if 'Owner' in roles:
-                result['iol_owner'].append(usr)
-            if 'iol-reviewer' in roles:
-                result['iol_reviewer'].append(usr)
-            if 'iol-manager' in roles:
-                result['iol_manager'].append(usr)
-        return result
+        app = doc.getItem(config.APP_FIELD,config.APP_FIELD_DEFAULT_VALUE)
+        utils = getUtility(IIolDocument,app)
+        return utils.getIolRoles(doc)
 
-class getIolState(object):
+
+
+
+
+
+
+
+
+
+
+
+
+# Get Workflow State
+class getState(object):
 
     def __init__(self, context, request):
         self.context = context
@@ -34,11 +42,40 @@ class getIolState(object):
         doc = self.aq_parent
         return api.content.get_state(obj=doc)
 
-class iol(object):
+# List of all available Transition
+class getTransitions(object):
 
-    def __init__(self, context, request):
+    def __init__(self,context,request):
         self.context = context
         self.request = request
 
-    def getVariables(self,varName):
-        return "pippo"
+    def __call__(self):
+        return ""
+
+#
+class wfInfo(object):
+
+    def __init__(self,context,request):
+        self.context = context
+        self.request = request
+
+    def __call__(self):
+        return ""
+
+class nextNumber(object):
+
+    def __init__(self,context,request):
+        self.context = context
+        self.request = request
+
+    def __call__(self,field='numero_pratica'):
+        return ""
+
+class createDocx(object):
+
+    def __init__(self,context,request):
+        self.context = context
+        self.request = request
+
+    def __call__(self):
+        return ""

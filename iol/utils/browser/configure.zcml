@@ -13,14 +13,7 @@
        name="getIolState"
        for="Products.CMFPlomino.interfaces.IPlominoDocument"
        layer="..interfaces.IIolLayer"
-       class=".views.getIolState"
-       permission="zope2.View"
-       />
-    <browser:page
-       name="iol"
-       for="Products.CMFPlomino.interfaces.IPlominoDocument"
-       layer="..interfaces.IIolLayer"
-       class=".views.iol"
+       class=".views.getState"
        permission="zope2.View"
        />
 </configure>

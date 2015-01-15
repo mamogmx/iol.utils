@@ -12,6 +12,7 @@ iol.utils.egg-info/paster_plugins.txt
 iol.utils.egg-info/requires.txt
 iol.utils.egg-info/top_level.txt
 iol/utils/__init__.py
+iol/utils/handlers.py
 iol/utils/interfaces.py
 iol/utils/tests.py
 iol/utils/browser/__init__.py

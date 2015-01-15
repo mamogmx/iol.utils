@@ -6,20 +6,9 @@ from Products.CMFPlomino.interfaces import IPlominoDocument
 
 class IIolDocument(Interface):
     """
-    marcker interface for iol document
+    marker interface for iol document
     """
-class IolDocument(object):
-    security = ClassSecurityInfo()
 
-    implements(IIolDocument)
-    adapts(IPlominoDocument)
-
-    def __init__(self, doc):
-        self.document = doc
-
-    security.declarePublic('getIolStatus')
-    def getIolStatus(self):
-        return api.content.get_state(obj=self.document)
 
 
 
