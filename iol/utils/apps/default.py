@@ -1,5 +1,7 @@
 from zope.interface import implements
 from iol.utils.interfaces import IIolDocument
+from five import grok
+
 class defaultApp(object):
     implements(IIolDocument)
 
@@ -20,4 +22,9 @@ class defaultApp(object):
             if 'iol-manager' in roles:
                 result['iol_manager'].append(usr)
         return result
+    def getWfInfo(self):
+        result = dict()
+        return result
 
+app = defaultApp()
+grok.global_utility(app,IIolDocument,'default')

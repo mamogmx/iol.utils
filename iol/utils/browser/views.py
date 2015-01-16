@@ -19,6 +19,18 @@ class getIolRoles(object):
         utils = getUtility(IIolDocument,app)
         return utils.getIolRoles(doc)
 
+# Retrieve Objects's WorkFlow Info
+class getWfInfo(object):
+
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+
+    def __call__(self):
+        doc = self.aq_parent
+        app = doc.getItem(config.APP_FIELD,config.APP_FIELD_DEFAULT_VALUE)
+        utils = getUtility(IIolDocument,app)
+        return utils.getWfInfo(doc)
 
 
 

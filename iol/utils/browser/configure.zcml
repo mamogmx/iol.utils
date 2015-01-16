@@ -10,10 +10,10 @@
        permission="zope2.View"
        />
     <browser:page
-       name="getIolState"
+       name="getWfInfo"
        for="Products.CMFPlomino.interfaces.IPlominoDocument"
        layer="..interfaces.IIolLayer"
-       class=".views.getState"
+       class=".views.getWfInfo"
        permission="zope2.View"
        />
 </configure>

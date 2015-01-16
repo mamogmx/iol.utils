@@ -12,8 +12,17 @@ iol.utils.egg-info/paster_plugins.txt
 iol.utils.egg-info/requires.txt
 iol.utils.egg-info/top_level.txt
 iol/utils/__init__.py
+iol/utils/config.py
 iol/utils/handlers.py
 iol/utils/interfaces.py
 iol/utils/tests.py
+iol/utils/apps/__init__.py
+iol/utils/apps/cantieri.py
+iol/utils/apps/default.py
+iol/utils/apps/dehor.py
+iol/utils/apps/disabili.py
+iol/utils/apps/fiere.py
+iol/utils/apps/scavi.py
+iol/utils/apps/trasporti.py
 iol/utils/browser/__init__.py
 iol/utils/browser/views.py
