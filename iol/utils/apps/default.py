@@ -94,7 +94,16 @@ class defaultApp(object):
     security.declarePublic('updateStatus')
     def updateStatus(self,obj):
         obj.setItem(STATUS_FIELD,api.content.get_state(obj=obj) )
-        obj.reindex_doc()
+        self.reindex_doc(obj)
+
+    security.declarePublic('reindex_doc')
+    def reindex_doc(self,obj):
+        db = obj.getParentDatabase()
+        # update index
+        db.getIndex().indexDocument(obj)
+        # update portal_catalog
+        if db.getIndexInPortal():
+            db.portal_catalog.catalog_object(obj, "/".join(db.getPhysicalPath() + (obj.getId(),)))
 #############################################################################
 app = defaultApp()
 gsm = component.getGlobalSiteManager()

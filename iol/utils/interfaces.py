@@ -46,4 +46,9 @@ class IolDocument(object):
         utils = getUtility(IIolDocument,'default')
         return utils.updateStatus(self.document)
 
+    security.declarePublic('reindex_doc')
+    def reindex_doc(self):
+        utils = getUtility(IIolDocument,'default')
+        return utils.reindex_doc(self.document)
+
 InitializeClass(IolDocument)
