@@ -52,7 +52,7 @@ class IolDocument(object):
         return utils.reindex_doc(self.document)
 
     security.declarePublic('createPdf')
-    def createPdf(self,filename,itemname='documento.pdf',overwrite=False):
+    def createPdf(self,filename,itemname='documento_inviato',overwrite=False):
         utils = getUtility(IIolDocument,'default')
         return utils.createPdf(self.document,filename,itemname,overwrite)
 
