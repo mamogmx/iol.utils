@@ -2,9 +2,13 @@ from zope.interface import implements
 from iol.utils.interfaces import IIolDocument
 from zope import component
 from AccessControl import ClassSecurityInfo
+from plone import api
+
 from gisweb.iol.permissions import IOL_READ_PERMISSION, IOL_EDIT_PERMISSION, IOL_REMOVE_PERMISSION
-from iol.utils.config import USER_CREDITABLE_FIELD,USER_UNIQUE_FIELD,IOL_APPS_FIELD
+
+from iol.utils.config import USER_CREDITABLE_FIELD,USER_UNIQUE_FIELD,IOL_APPS_FIELD,STATUS_FIELD
 from Products.CMFCore.utils import getToolByName
+
 
 
 class defaultApp(object):
@@ -88,6 +92,9 @@ class defaultApp(object):
                 cont += 1
         return cont
 
+    def updateStatus(self,obj):
+        obj.setItem(STATUS_FIELD,api.content.get_state(obj=obj) )
+        obj.reindex_doc()
 #############################################################################
 app = defaultApp()
 gsm = component.getGlobalSiteManager()

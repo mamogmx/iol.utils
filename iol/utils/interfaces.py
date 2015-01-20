@@ -41,4 +41,9 @@ class IolDocument(object):
         utils = getUtility(IIolDocument,app)
         return utils.accreditaUtente(self.document)
 
+    security.declarePublic('updateStatus')
+    def updateStatus(self):
+        utils = getUtility(IIolDocument,'default')
+        return utils.updateStatus(self.document)
+
 InitializeClass(IolDocument)
