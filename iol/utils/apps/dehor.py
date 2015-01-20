@@ -1,5 +1,6 @@
 from default import defaultApp
 from zope import component
+from iol.utils.interfaces import IIolDocument
 
 class dehor(defaultApp):
     def __init__(self):
