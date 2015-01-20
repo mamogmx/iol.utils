@@ -1,4 +1,5 @@
 from default import defaultApp
+from zope import component
 
 class dehor(defaultApp):
     def __init__(self):
