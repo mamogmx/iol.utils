@@ -72,7 +72,7 @@ class defaultApp(object):
     security.declarePublic('accreditaUtente')
     def accreditaUtente(self,obj):
         user = obj.getOwner()
-        username = user.get('username','')
+        username = user.getUserName()
         apps = obj.getItem(IOL_APPS_FIELD,[])
 
         #for appName in apps:
