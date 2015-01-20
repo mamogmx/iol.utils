@@ -51,4 +51,9 @@ class IolDocument(object):
         utils = getUtility(IIolDocument,'default')
         return utils.reindex_doc(self.document)
 
+    security.declarePublic('createPdf'):
+    def createPdf(self,filename,itemname='documento.pdf',overwrite=False):
+        utils = getUtility(IIolDocument,'default')
+        return utils.createPdf(self.document,filename,itemname,overwrite)
+
 InitializeClass(IolDocument)

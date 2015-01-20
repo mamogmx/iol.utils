@@ -104,6 +104,26 @@ class defaultApp(object):
         # update portal_catalog
         if db.getIndexInPortal():
             db.portal_catalog.catalog_object(obj, "/".join(db.getPhysicalPath() + (obj.getId(),)))
+
+    security.declarePublic('createPdf')
+    def createPdf(selfself,obj,filename,itemname,overwrite):
+        filename = '%s.pdf' % filename or obj.REQUEST.get('filename') or obj.getId()
+
+        try:
+            res = obj.restrictedTraverse('@@wkpdf').get_pdf_file()
+        except Exception as err:
+
+            msg1 = "%s" % (str(err))
+            msg2 = "Attenzione! Non è stato possibile allegare il file: %s" % filename
+            api.portal.show_message(message=msg1, request=obj.REQUEST,type='error')
+            api.portal.show_message(message=msg2, request=obj.REQUEST,type='warning')
+        else:
+            (f,c) = obj.setfile(res,filename=filename,overwrite=overwrite,contenttype='application/pdf')
+            if f and c:
+                old_item = obj.getItem(itemname, {}) or {}
+                old_item[filename] = c
+                obj.setItem(itemname, old_item)
+
 #############################################################################
 app = defaultApp()
 gsm = component.getGlobalSiteManager()
