@@ -38,7 +38,7 @@ class IolDocument(object):
     def accreditaUtente(self):
         app = self.document.getItem(config.APP_FIELD,config.APP_FIELD_DEFAULT_VALUE)
 
-        utils = getUtility(IIolDocument,app)
+        utils = getUtility(IIolDocument,'default')
         return utils.accreditaUtente(self.document)
 
     security.declarePublic('updateStatus')
@@ -52,7 +52,7 @@ class IolDocument(object):
         return utils.reindex_doc(self.document)
 
     security.declarePublic('createPdf')
-    def createPdf(self,filename,itemname='documento_inviato',overwrite=False):
+    def createPdf(self,filename,itemname='documento_da_firmare',overwrite=False):
         utils = getUtility(IIolDocument,'default')
         return utils.createPdf(self.document,filename,itemname,overwrite)
 
