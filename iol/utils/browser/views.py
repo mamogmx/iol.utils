@@ -5,6 +5,8 @@ from iol.utils.interfaces import IIolDocument
 from iol.utils import config
 from zope.component import getUtility
 from iol.utils.interfaces import IolDocument
+from five import grok
+from Products.CMFPlomino.interfaces import IPlominoDocument
 
 
 # Get Iol Role on Object
@@ -33,7 +35,26 @@ class getWfInfo(object):
 
 
 
+class protocollaInvia(grok.View):
 
+    grok.context(IPlominoDocument)
+
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+
+    def __call__(self, *args, **kwargs):
+        doc = self.aq_parent
+        wf = getToolByName(context, 'portal_workflow') #state_change.workflow
+        tr_ids = [i['id'] for i in wf.getTransitionsFor(obj=doc, container=None, REQUEST=None)]
+
+        next_tr = 'protocolla'
+        if next_tr in tr_ids:
+            wf.doActionFor(context, next_tr)
+
+        IolDocument(context).updateStatus()
+        urlAction='%s/content_status_modify?workflow_action=invia_domanda' %(doc.absolute_url())
+        doc.REQUEST.RESPONSE.redirect(urlAction)
 
 
 
