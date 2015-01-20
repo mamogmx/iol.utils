@@ -4,6 +4,7 @@ from plone import api
 from iol.utils.interfaces import IIolDocument
 from iol.utils import config
 from zope.component import getUtility
+from iol.utils.interfaces import IolDocument
 
 
 # Get Iol Role on Object
@@ -15,9 +16,8 @@ class getIolRoles(object):
 
     def __call__(self):
         doc = self.aq_parent
-        app = doc.getItem(config.APP_FIELD,config.APP_FIELD_DEFAULT_VALUE)
-        utils = getUtility(IIolDocument,app)
-        return utils.getIolRoles(doc)
+        iDoc = IolDocument(doc)
+        return iDoc.getIolRoles(doc)
 
 # Retrieve Objects's WorkFlow Info
 class getWfInfo(object):
@@ -28,9 +28,8 @@ class getWfInfo(object):
 
     def __call__(self):
         doc = self.aq_parent
-        app = doc.getItem(config.APP_FIELD,config.APP_FIELD_DEFAULT_VALUE)
-        utils = getUtility(IIolDocument,app)
-        return utils.getWfInfo(doc)
+        iDoc = IolDocument(doc)
+        return iDoc.getWfInfo()
 
 
 

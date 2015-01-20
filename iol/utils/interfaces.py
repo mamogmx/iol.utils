@@ -34,5 +34,11 @@ class IolDocument(object):
         utils = getUtility(IIolDocument,app)
         return utils.getIolRoles(self.document)
 
+    security.declarePublic('accreditaUtente')
+    def accreditaUtente(self):
+        app = self.document.getItem(config.APP_FIELD,config.APP_FIELD_DEFAULT_VALUE)
+
+        utils = getUtility(IIolDocument,app)
+        return utils.accreditaUtente(self.document)
 
 InitializeClass(IolDocument)
