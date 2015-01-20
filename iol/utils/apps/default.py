@@ -54,15 +54,13 @@ class defaultApp(object):
     #remove selected user from groups
     def _removeGroups(self,obj,username,grps):
         portal_groups = getToolByName(obj, 'portal_groups')
-        import pdb
-        pdb.set_trace()
         for grp in grps:
             portal_groups.removePrincipalToGroup(username, grp)
 
     #Assign ownership to selected user
     def _assignOwner(self,obj,user,add=True):
         if add:
-            username = user.get('username','')
+            username = user.getUserName()
             obj.manage_setLocalRoles(username, ["Owner",])
         else:
             obj.changeOwnership(user)
