@@ -77,6 +77,8 @@ class defaultApp(object):
             #app = App(appName)
             #for grp in app.getOwnerGroups():
             #    self._assignGroups(obj,username,[grp])
+        import pdb
+        pdb.set_trace()
         self._assignGroups(obj,username,apps)
 
         catalog = api.portal.get_tool('portal_catalog')
