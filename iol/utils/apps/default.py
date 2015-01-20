@@ -54,6 +54,8 @@ class defaultApp(object):
     #remove selected user from groups
     def _removeGroups(self,obj,username,grps):
         portal_groups = getToolByName(obj, 'portal_groups')
+        import pdb
+        pdb.set_trace()
         for grp in grps:
             portal_groups.removePrincipalToGroup(username, grp)
 
@@ -77,8 +79,7 @@ class defaultApp(object):
             #app = App(appName)
             #for grp in app.getOwnerGroups():
             #    self._assignGroups(obj,username,[grp])
-        import pdb
-        pdb.set_trace()
+
         self._assignGroups(obj,username,apps)
 
         catalog = api.portal.get_tool('portal_catalog')
