@@ -91,7 +91,7 @@ class defaultApp(object):
                 self._assignOwner(doc,user)
                 cont += 1
         return cont
-
+    security.declarePublic('updateStatus')
     def updateStatus(self,obj):
         obj.setItem(STATUS_FIELD,api.content.get_state(obj=obj) )
         obj.reindex_doc()
