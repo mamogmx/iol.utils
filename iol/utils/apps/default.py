@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from zope.interface import implements
 from iol.utils.interfaces import IIolDocument
 from zope import component
