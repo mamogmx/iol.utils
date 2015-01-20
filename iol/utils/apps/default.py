@@ -86,6 +86,7 @@ class defaultApp(object):
         brains = catalog(portal_type='PlominoDatabase')
         unique = obj.getItem(USER_UNIQUE_FIELD,'')
         cont = 0
+        brains = []
         for brain in brains:
             db = brain.getObject()
             idx = db.getIndex()
