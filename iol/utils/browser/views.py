@@ -35,9 +35,7 @@ class getWfInfo(object):
 
 
 
-class protocollaInvia(grok.View):
-
-    grok.context(IPlominoDocument)
+class protocollaInvia(object):
 
     def __init__(self, context, request):
         self.context = context

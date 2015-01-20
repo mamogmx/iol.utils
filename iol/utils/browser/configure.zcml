@@ -10,10 +10,10 @@
        permission="zope2.View"
        />
     <browser:page
-       name="getWfInfo"
+       name="protocollaInvia"
        for="Products.CMFPlomino.interfaces.IPlominoDocument"
        layer="..interfaces.IIolLayer"
-       class=".views.getWfInfo"
+       class=".views.protocollaInvia"
        permission="zope2.View"
        />
 </configure>
