@@ -48,7 +48,7 @@ class protocollaInvia(object):
 
         next_tr = 'protocolla'
         if next_tr in tr_ids:
-            wf.doActionFor(context, next_tr)
+            wf.doActionFor(doc, next_tr)
 
         IolDocument(doc).updateStatus()
         urlAction='%s/content_status_modify?workflow_action=invia_domanda' %(doc.absolute_url())
