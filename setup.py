@@ -27,6 +27,7 @@ setup(name='iol.utils',
           'setuptools',
           'plone.api',
           'Products.CMFPlomino',
+          'gisweb.iol',
           # -*- Extra requirements: -*-
       ],
       entry_points="""

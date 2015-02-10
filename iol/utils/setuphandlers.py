@@ -1,10 +1,11 @@
 from plone.app.controlpanel.security import ISecuritySchema
 from plone import api
-from Products.Five.utilities.marker import mark
+
+from Products.Five.utilities.marker import mark,erase
 from .interfaces import IIolDocument
 import logging
 
-PROFILE_ID = 'iol.utils.replication:default'
+PROFILE_ID = 'iol.utils:default'
 logger = logging.getLogger('iol.utils')
 
 def initPackage(context):
@@ -15,4 +16,5 @@ def initPackage(context):
         for doc in db.getAllDocuments():
             if not IIolDocument.providedBy(doc):
                 mark(doc,IIolDocument)
+
 

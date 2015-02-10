@@ -9,11 +9,4 @@
        class=".views.getIolRoles"
        permission="zope2.View"
        />
-    <browser:page
-       name="protocollaInvia"
-       for="Products.CMFPlomino.interfaces.IPlominoDocument"
-       layer="..interfaces.IIolLayer"
-       class=".views.protocollaInvia"
-       permission="zope2.View"
-       />
 </configure>

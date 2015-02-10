@@ -1,3 +1,4 @@
 setuptools
 plone.api
 Products.CMFPlomino
+gisweb.iol

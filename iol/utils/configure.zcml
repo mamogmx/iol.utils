@@ -24,6 +24,13 @@
       description="Installs the iol.utils package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
+  <genericsetup:registerProfile
+    name="uninstall"
+    title="iol.utils uninstall"
+    directory="profiles/uninstall"
+    description="Uninstalls the iol.utils package"
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
   <genericsetup:importStep
       name="iol.utils"
       title="Initialize Package"
@@ -38,7 +45,7 @@
       />-->
 
     <class class="Products.CMFPlomino.PlominoDocument.PlominoDocument">
-        <implements interface=".interfaces.IIolDocument" />
+        <implements interface=".interfaces.IIolApp" />
     </class>
 
     <!--<subscriber

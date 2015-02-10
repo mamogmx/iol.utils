@@ -35,32 +35,6 @@ class getWfInfo(object):
 
 
 
-class protocollaInvia(object):
-
-    def __init__(self, context, request):
-        self.context = context
-        self.request = request
-
-    def __call__(self, *args, **kwargs):
-        doc = self.aq_parent
-        wf = getToolByName(doc, 'portal_workflow') #state_change.workflow
-        tr_ids = [i['id'] for i in wf.getTransitionsFor(obj=doc, container=None, REQUEST=None)]
-
-        next_tr = 'protocolla'
-        if next_tr in tr_ids:
-            wf.doActionFor(doc, next_tr)
-
-        IolDocument(doc).updateStatus()
-        urlAction='%s/content_status_modify?workflow_action=invia_domanda' %(doc.absolute_url())
-        doc.REQUEST.RESPONSE.redirect(urlAction)
-
-
-
-
-
-
-
-
 # Get Workflow State
 class getState(object):
 

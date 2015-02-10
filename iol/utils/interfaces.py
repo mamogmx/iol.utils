@@ -7,6 +7,7 @@ from Products.CMFPlomino.interfaces import IPlominoDocument, IPlominoForm
 from zope.component import getGlobalSiteManager
 from iol.utils import config
 from zope.component import getUtility
+from gisweb.iol.permissions import IOL_READ_PERMISSION,IOL_EDIT_PERMISSION
 
 class IIolDocument(Interface):
     """
@@ -56,4 +57,19 @@ class IolDocument(object):
         utils = getUtility(IIolDocument,'default')
         return utils.createPdf(self.document,filename,itemname,overwrite)
 
+    security.declareProtected(IOL_READ_PERMISSION,'isActionSupported')
+    def isActionSupported(self,tr=''):
+        if not tr:
+            return False
+        wftool = api.portal.get_tool(name='portal_workflow')
+        for wfname in wftool.getChainFor(self):
+            wf = wftool.getWorkflowById(wfname)
+            if wf.isActionSupported(self,tr):
+                return True
+        return False
+
+    security.declareProtected(IOL_READ_PERMISSION,'getInfoFor')
+    def getInfoFor(self,obj,info,wf_id=''):
+        wftool = api.portal.get_tool(name='portal_workflow')
+        return wftool.getInfoFor(obj,info,default='')
 InitializeClass(IolDocument)
