@@ -45,7 +45,7 @@
       />-->
 
     <class class="Products.CMFPlomino.PlominoDocument.PlominoDocument">
-        <implements interface=".interfaces.IIolApp" />
+        <implements interface=".interfaces.IIolDocument" />
     </class>
 
     <!--<subscriber
